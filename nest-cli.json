@@ -1,0 +1,48 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/inbound-api/src",
+  "monorepo": true,
+  "root": "apps/inbound-api",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/inbound-api/tsconfig.app.json"
+  },
+  "projects": {
+    "inbound-api": {
+      "type": "application",
+      "root": "apps/inbound-api",
+      "entryFile": "main",
+      "sourceRoot": "apps/inbound-api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/inbound-api/tsconfig.app.json"
+      }
+    },
+    "shared": {
+      "type": "library",
+      "root": "libs/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/tsconfig.lib.json"
+      }
+    },
+    "inbound-db": {
+      "type": "library",
+      "root": "libs/inbound-db",
+      "entryFile": "index",
+      "sourceRoot": "libs/inbound-db/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/inbound-db/tsconfig.lib.json"
+      }
+    },
+    "helios-db": {
+      "type": "library",
+      "root": "libs/helios-db",
+      "entryFile": "index",
+      "sourceRoot": "libs/helios-db/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/helios-db/tsconfig.lib.json"
+      }
+    }
+  }
+}
